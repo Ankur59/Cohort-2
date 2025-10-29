@@ -1,11 +1,23 @@
+// create a reusable piece for started as it is used multiple times
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
 body {
-  background-color: #fae8dc;
+  height: 100%;
+  width: 100%;
+  background-color: #f9f5f1;
 }
 
 .navContainer {
   display: flex;
-  justify-content: space-around;
-  margin-top: 1rem;
+  justify-content: space-evenly;
+  padding: 0.5rem;
+  // margin-top: 1rem;
+
   align-items: center;
 
   .linkContainer {
@@ -20,7 +32,6 @@ body {
       font-size: large;
       color: #615cc5;
     }
-
     .Started {
       background: #615cc5;
       color: inherit;
@@ -34,11 +45,19 @@ body {
       outline: inherit;
     }
   }
+  @media (max-width: 853px) {
+    .linkContainer {
+      display: none;
+    }
+  }
 }
 
 .heroContainer {
   width: 100%;
+  // padding: 0 10rem;
   background-color: rd;
+  // min-width: fit-content;
+  // align-self: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,56 +66,154 @@ body {
     width: 70vw;
     max-height: 100%;
     margin-top: 4rem;
-    // background-color: yellow;
     padding: 0px 10px;
     align-items: center;
     justify-content: space-between;
     display: flex;
     gap: 10rem;
-  }
-  .heroText {
-    max-width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
 
-    .Started {
-      background: #615cc5;
-      color: inherit;
-      border: none;
-      color: white;
-      padding: 13px 30px;
-      font-weight: bold;
-      font-size: large;
-      border-radius: 5rem;
-      cursor: pointer;
-      outline: inherit;
+    .heroText {
+      max-width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .heading {
+        font-size: 70px;
+        text-transform: capitalize;
+
+        .avatar {
+          // background-color: red;
+          display: inline-flex;
+          max-width: fit-content;
+          align-items: center;
+          justify-content: center;
+          margin: 0 0.5rem;
+          transform: translateY(20%);
+        }
+        @media (max-width: 500px) {
+          .avatar {
+            display: none;
+          }
+        }
+      }
+      @media (max-width: 500px) {
+        .heading {
+          font-size: 40px;
+        }
+      }
+      // hhhh
+      .body {
+        font-size: larger;
+        line-height: 2rem;
+      }
+      .Started {
+        background: #615cc5;
+        color: inherit;
+        border: none;
+        color: white;
+        padding: 13px 30px;
+        font-weight: bold;
+        font-size: large;
+        border-radius: 5rem;
+        cursor: pointer;
+        outline: inherit;
+      }
+    }
+    @media (max-width: 1160px) {
+      .heroText {
+        max-width: 95%;
+        text-align: center;
+        // background-color: ;
+      }
     }
   }
-  .heading {
-    font-size: 70px;
-    text-transform: capitalize;
-
-    .avatar {
-      // background-color: red;
-      display: inline-flex;
-      max-width: fit-content;
+  @media (max-width: 1140px) {
+    .smallWrapper {
+      // background-color: yellow;
+      display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 0.5rem;
-      transform: translateY(20%);
-
-      
+      flex-direction: column;
     }
   }
-  .body {
-    font-size: larger;
-    line-height: 2rem;
+
+  @media (max-width: 1440px) {
+    .smallWrapper {
+      width: 85vw;
+      padding: 0px 10px;
+      // background-color: red;
+    }
   }
+
   .heroImg {
     height: 600px;
     width: 1000px;
     object-fit: cover;
     border-radius: 20px;
   }
+  @media (max-width: 1140px) {
+    .heroImg {
+      width: 30rem;
+    }
+  }
+  @media (max-width: 500px) {
+    .heroImg {
+      width: 20rem;
+      height: 15rem;
+    }
+  }
+}
+
+.crouselContainer {
+  display: flex;
+  overflow-y: scroll;
+  margin-top: 2em;
+  gap: 10rem;
+  background-color: #d7befc;
+}
+
+.crouselContainer::-webkit-scrollbar {
+  display: none;
+}
+.group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+  animation: spin 10s infinite linear;
+}
+.item {
+  flex: 0 0 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  -webkit-user-drag: none; /* Prevents dragging in WebKit browsers (Chrome, Safari, Edge) */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
+@media (max-width: 500px) {
+  .heroContainer {
+    // background-color: pink;
+    min-width: 100vw;
+  }
+}
+
+@keyframes spin {
+  from {
+    translate: 0;
+  }
+  to {
+    translate: -100%;
+  }
+}
+
+.group img {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
 }
