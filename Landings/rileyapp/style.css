@@ -164,13 +164,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10rem;
+  gap: 7rem;
   animation: spin 10s infinite linear;
 }
 
 .item {
   flex: 0 0 5rem;
-  height: 5rem;
+  height: 7rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -187,12 +187,39 @@ body {
     min-width: 100vw;
   }
 }
+.crouselContainer2 {
+  display: flex;
+  overflow-y: scroll;
+  background-color: black;
+  margin-top: 2rem;
+  gap: 10rem;
+}
+
+.crouselContainer2::-webkit-scrollbar {
+  display: none;
+}
+
+.avaatarGroup {
+  display: flex;
+  flex: 0 0 5rem;
+  gap: 10rem;
+  animation: spin2 5s infinite linear;
+}
+
 @keyframes spin {
   from {
     translate: 0;
   }
   to {
     translate: -100%;
+  }
+}
+@keyframes spin2 {
+  from {
+    translate: -100%;
+  }
+  to {
+    translate: 0;
   }
 }
 .group img {
