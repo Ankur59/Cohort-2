@@ -12,7 +12,7 @@ for (let attempts = 0; attempts < totalAttempt; attempts++) {
     else if (guess !== password) {
 
         alert(
-            `Wrong password ${t~otalAttempt - attempts - 1} attempt left`
+            `Wrong password ${totalAttempt - attempts - 1} attempt left`
         )
     }
 
