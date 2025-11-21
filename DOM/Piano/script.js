@@ -10,8 +10,9 @@ document.addEventListener("keydown", function (e) {
     } catch (error) {
         console.log("Invalid key")
     }
+    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
     key.style.backgroundColor = "lightblue";
-    key.style.transform = "scale(0.8)";
+    key.style.transform = "scale(0.7)";
 
     setTimeout(() => {
         key.style.backgroundColor = "white";
