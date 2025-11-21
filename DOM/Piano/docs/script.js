@@ -5,7 +5,7 @@ document.addEventListener("keydown", function (e) {
     let key
     try {
         let pressed = e.key.toLowerCase()
-        q = new Audio(`./public/audio/${pressed}.mp3`)
+        q = new Audio(`./audio/${pressed}.mp3`)
         key = document.querySelector(`.${pressed}`)
     } catch (error) {
         console.log("Invalid key")
